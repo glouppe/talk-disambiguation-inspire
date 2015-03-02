@@ -124,14 +124,14 @@ For each author, group together all his publications, and only those.
 
 \begin{frame}
 
-\tikzstyle{block} = [rectangle, draw, text width=5em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{block} = [rectangle, draw, text width=10em, text centered, rounded corners, minimum height=2em]
 \tikzstyle{line} = [draw, -latex']
 \tikzstyle{cloud} = []
 
 \begin{center}
 \begin{tikzpicture}[node distance = 2cm, auto]
     % Place nodes
-    \node [block] (clustering) {?};
+    \node [block] (clustering) {Author disambiguation};
     \node [cloud, above of=clustering] (input1) {$\{s_1, s_2, ..., s_N\}$};
     \node [cloud, below of=clustering] (output) {$\{ \underbrace{\{ s_1, s_3, s_4 \}}_{\text{author 1}}, \underbrace{\{ s_2, s_5\}}_{\text{author 2}}, ... \}$};
     % Draw edges
@@ -347,6 +347,27 @@ $$
 };
 \end{frame}
 
+% Variable importances ========================================================
+
+\begin{frame}{Variable importances}
+\begin{figure}
+\includegraphics[width=\textwidth]{./figures/imp.png}
+\end{figure}
+\end{frame}
+
+
+% Plots =======================================================================
+
+\begin{frame}{Partial dependence plots}
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{./figures/coauthors.png}\\
+\includegraphics[width=0.8\textwidth]{./figures/yeardiff.png}
+\end{figure}
+\end{frame}
+
+
+% Pipeline ====================================================================
+
 \begin{frame}
 \tikzstyle{block} = [rectangle, draw, text width=5em, text centered, rounded corners, minimum height=2em]
 \tikzstyle{line} = [draw, -latex']
@@ -482,24 +503,6 @@ where $C(s)$ (resp., $\hat{C}(s)$) is the true (resp., predicted) set of signatu
     \end{tabular}
 \end{table}
 
-\end{frame}
-
-% Variable importances ========================================================
-
-\begin{frame}{Variable importances}
-\begin{figure}
-\includegraphics[width=\textwidth]{./figures/imp.png}
-\end{figure}
-\end{frame}
-
-
-% Plots =======================================================================
-
-\begin{frame}{Partial dependence plots}
-\begin{figure}
-\includegraphics[width=0.8\textwidth]{./figures/coauthors.png}\\
-\includegraphics[width=0.8\textwidth]{./figures/yeardiff.png}
-\end{figure}
 \end{frame}
 
 % Improvements ================================================================
