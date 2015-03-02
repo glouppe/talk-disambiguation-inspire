@@ -122,6 +122,26 @@ For each author, group together all his publications, and only those.
 \end{columns}}
 \end{frame}
 
+\begin{frame}
+
+\tikzstyle{block} = [rectangle, draw, text width=5em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = []
+
+\begin{center}
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (clustering) {?};
+    \node [cloud, above of=clustering] (input1) {$\{s_1, s_2, ..., s_N\}$};
+    \node [cloud, below of=clustering] (output) {$\{ \underbrace{\{ s_1, s_3, s_4 \}}_{\text{author 1}}, \underbrace{\{ s_2, s_5\}}_{\text{author 2}}, ... \}$};
+    % Draw edges
+    \path [line] (input1) -- (clustering);
+    \path [line] (clustering) -- (output);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
 
 % Spread of the problem =======================================================
 
@@ -370,10 +390,10 @@ $$
 \begin{center}
 \begin{tikzpicture}[node distance = 2cm, auto]
     % Place nodes
-    \node [block] (clustering) {Clustering};
+    \node [block] (clustering) {Hierarchical clustering};
     \node [cloud, above of=clustering] (input1) {$\{s_1, s_2, ..., s_N\}$};
     \node [cloud, left of=clustering] (input2) {$\varphi$};
-    \node [cloud, below of=clustering] (output) {$\{ \{ s_1, s_3, s_4 \}, \{ s_2, s_5\}, ... \}$};
+    \node [cloud, below of=clustering] (output) {$\{ \underbrace{\{ s_1, s_3, s_4 \}}_{\text{author 1}}, \underbrace{\{ s_2, s_5\}}_{\text{author 2}}, ... \}$};
     % Draw edges
     \path [line] (input1) -- (clustering);
     \path [line] (input2) -- (clustering);
